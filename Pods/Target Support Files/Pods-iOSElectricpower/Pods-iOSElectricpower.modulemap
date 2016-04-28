@@ -1,0 +1,6 @@
+framework module Pods_iOSElectricpower {
+  umbrella header "Pods-iOSElectricpower-umbrella.h"
+
+  export *
+  module * { export * }
+}
