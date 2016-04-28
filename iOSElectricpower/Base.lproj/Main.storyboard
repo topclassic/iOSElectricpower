@@ -13,6 +13,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="jmN-su-hfh" kind="relationship" relationship="viewControllers" id="jVw-zv-7oR"/>
@@ -25,22 +27,44 @@
             </objects>
             <point key="canvasLocation" x="340" y="1071"/>
         </scene>
-        <!--Item-->
+        <!--Edit Name-->
         <scene sceneID="82I-Gb-hQA">
             <objects>
-                <tableViewController id="wA2-YW-qYi" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MG3-BA-qMT">
+                <tableViewController id="wA2-YW-qYi" customClass="EditNameController" customModule="iOSElectricpower" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="MG3-BA-qMT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sou-Io-Xz3">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditNameCell" rowHeight="74" id="Sou-Io-Xz3" customClass="EditNameCell" customModule="iOSElectricpower" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sou-Io-Xz3" id="tnr-I3-18S">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="73.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsy-TW-2xd">
+                                            <rect key="frame" x="373" y="26" width="198" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pVy-2V-7d2">
+                                            <rect key="frame" x="52" y="8" width="61" height="57"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hik-Rp-jQo">
+                                            <rect key="frame" x="188" y="26" width="167" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ImageView" destination="pVy-2V-7d2" id="fKA-p1-Khm"/>
+                                    <outlet property="OutletID" destination="hik-Rp-jQo" id="GVh-ah-oFX"/>
+                                    <outlet property="OutletName" destination="vsy-TW-2xd" id="UMm-lV-KM0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,28 +72,57 @@
                             <outlet property="delegate" destination="wA2-YW-qYi" id="fog-l9-u1J"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="7DW-QE-aW0"/>
+                    <tabBarItem key="tabBarItem" title="Edit Name" image="tooltabbar" id="7DW-QE-aW0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuS-ii-x8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="237"/>
+            <point key="canvasLocation" x="403" y="1849"/>
         </scene>
-        <!--Item-->
+        <!--Set Limit-->
         <scene sceneID="WWS-BG-yRY">
             <objects>
-                <tableViewController id="6bV-MV-jcE" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BsE-sJ-hLw">
+                <tableViewController id="6bV-MV-jcE" customClass="SetLimitController" customModule="iOSElectricpower" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="BsE-sJ-hLw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fPI-OA-uJr">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetLimitCell" rowHeight="74" id="fPI-OA-uJr" customClass="SetLimitCell" customModule="iOSElectricpower" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fPI-OA-uJr" id="Dbe-ir-RoD">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="73.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iee-3M-cbB">
+                                            <rect key="frame" x="189" y="13" width="198" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1p-ix-rUC">
+                                            <rect key="frame" x="189" y="42" width="198" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJv-Or-1Rm">
+                                            <rect key="frame" x="396" y="42" width="174" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eao-ef-SHb">
+                                            <rect key="frame" x="53" y="6" width="61" height="57"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ImageView" destination="eao-ef-SHb" id="xDz-mW-nib"/>
+                                    <outlet property="Limit" destination="vJv-Or-1Rm" id="q4s-Ry-uqT"/>
+                                    <outlet property="OutletName" destination="iee-3M-cbB" id="mgE-eA-Qg3"/>
+                                    <outlet property="Power" destination="I1p-ix-rUC" id="ir9-g0-p4N"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -77,13 +130,13 @@
                             <outlet property="delegate" destination="6bV-MV-jcE" id="6zK-SI-gv6"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="9jn-JA-V1K"/>
+                    <tabBarItem key="tabBarItem" title="Set Limit" image="limittabbar" id="9jn-JA-V1K" userLabel="limit"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZF-Ef-ybQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167" y="1077"/>
+            <point key="canvasLocation" x="1017" y="1849"/>
         </scene>
-        <!--Item-->
+        <!--Help-->
         <scene sceneID="yMK-6g-zFf">
             <objects>
                 <viewController id="GAf-Yb-RaE" sceneMemberID="viewController">
@@ -96,13 +149,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="P67-WI-X1l"/>
+                    <tabBarItem key="tabBarItem" title="Help" image="helptabbar" id="P67-WI-X1l" userLabel="Help"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNc-uG-oeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="1917"/>
+            <point key="canvasLocation" x="1017" y="1071"/>
         </scene>
-        <!--Item-->
+        <!--Graph-->
         <scene sceneID="h1k-bL-78u">
             <objects>
                 <tableViewController id="jmN-su-hfh" sceneMemberID="viewController">
@@ -125,11 +178,17 @@
                             <outlet property="delegate" destination="jmN-su-hfh" id="drX-tR-fJ2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Xiw-jJ-oBL"/>
+                    <tabBarItem key="tabBarItem" title="Graph" image="graphtabbar" id="Xiw-jJ-oBL" userLabel="Graph"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEg-Q3-8MJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167" y="1865"/>
+            <point key="canvasLocation" x="-212" y="1849"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="graphtabbar" width="25" height="22"/>
+        <image name="helptabbar" width="25" height="25"/>
+        <image name="limittabbar" width="25" height="25"/>
+        <image name="tooltabbar" width="25" height="24"/>
+    </resources>
 </document>
