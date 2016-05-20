@@ -48,5 +48,26 @@ class EditNameController: UITableViewController{
         cell.ImageView.image = imageImages
         return cell;
     }
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath){
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? EditNameCell
+        
+        let selectAlert = UIAlertController(title:"Edit OutletName",message: "",preferredStyle: UIAlertControllerStyle.Alert)
+        let Ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
+            if let textField: UITextField = selectAlert.textFields?.first as UITextField!{
+                cell?.OutletName.text = textField.text
+            }
+            
+        })
+        let Cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
+        selectAlert.addAction(Ok)
+        selectAlert.addAction(Cancel)
+     
+        selectAlert.addTextFieldWithConfigurationHandler({(textField)->Void in
+            textField.placeholder = "Change your outlet name"
+        })
+        self.presentViewController(selectAlert, animated: true, completion: nil)
+ 
+
+    }
+
 }
