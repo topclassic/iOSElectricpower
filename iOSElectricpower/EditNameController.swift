@@ -50,11 +50,30 @@ class EditNameController: UITableViewController{
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath){
         let cell = tableView.cellForRowAtIndexPath(indexPath) as? EditNameCell
-        
+        let maindata = values[indexPath.row]
         let selectAlert = UIAlertController(title:"Edit OutletName",message: "",preferredStyle: UIAlertControllerStyle.Alert)
         let Ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
             if let textField: UITextField = selectAlert.textFields?.first as UITextField!{
                 cell?.OutletName.text = "Outlet Name: "+textField.text!
+                let request = NSMutableURLRequest(URL: NSURL(string: "http://topelectirc.azurewebsites.net/updatename.php")!)
+                request.HTTPMethod = "POST"
+                let postString = "id=\((maindata["outlet_id"] as? String)!)&name=\(textField.text!)"
+                request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+                
+                let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+                    data, response, error in
+                    
+                    if error != nil {
+                        print("error=\(error)")
+                        return
+                    }
+                    
+                    print("response = \(response)")
+                    
+                    let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("responseString = \(responseString)")
+                }
+                task.resume()
             }
             
         })
