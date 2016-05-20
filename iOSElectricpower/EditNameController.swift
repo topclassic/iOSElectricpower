@@ -54,7 +54,7 @@ class EditNameController: UITableViewController{
         let selectAlert = UIAlertController(title:"Edit OutletName",message: "",preferredStyle: UIAlertControllerStyle.Alert)
         let Ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
             if let textField: UITextField = selectAlert.textFields?.first as UITextField!{
-                cell?.OutletName.text = textField.text
+                cell?.OutletName.text = "Outlet Name: "+textField.text!
             }
             
         })
